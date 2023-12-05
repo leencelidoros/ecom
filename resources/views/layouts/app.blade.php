@@ -20,6 +20,8 @@
 </head>
 <body>
     @yield('content')
+   
+
     <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
 </body>
 </html>
