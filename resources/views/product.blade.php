@@ -9,9 +9,11 @@
                     <div class="carousel-inner">
                         @foreach($products as $item)
                         <div class="carousel-item {{ $item['id'] == 1 ? 'active' : '' }} text-center">
-                            <img class="slider-img "height=400  width=400  src="{{ $item['gallery'] }}" alt="...">
-                            <h3>{{$item['name']}}</h3>
-                            <p>{{$item['description']}}</p>
+                            <a href="detail/{{$item['id']}}">
+                                <img class="slider-img "height=400  width=400  src="{{ $item['gallery'] }}" alt="...">
+                                <h3 >{{$item['name']}}</h3>
+                                <p>{{$item['description']}}</p>
+                            </a>
                         </div>
                         @endforeach
                     </div>
@@ -27,15 +29,24 @@
             </div>
 </div>
         </div> 
+
         <div class="row trending-items bg-light">
-            <h2 class="lead text-center">Trending Items</h3>
+        <h2 class="lead text-center">Trending Items</h3>
             @foreach($products as $item)
-            <div class="col-md-4">             
-               <img class="slider-img "height=100  width=100  src="{{ $item['gallery'] }}" alt="...">
-                <h3>{{$item['name']}}</h3>
+            <div class="col-md-4">
+                    <div class="card-group">
+                     <a href="detail/{{$item['id']}}">
+                        <div class="card text-center mb-2">
+                        <div class="card-body">
+                                <h5 class="card-header">{{$item['name']}}</h5>
+                        </div>
+                           <img class="slider-img rounded float-end"height=200  width=200  src="{{ $item['gallery'] }}" alt="...">
+                             <div class="card-footer">{{$item['id']}}</div>
+                        </div>
+                      </a>
+                    </div>
             </div>
             @endforeach
-            </div>
         </div>
    </div>
 

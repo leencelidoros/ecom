@@ -20,4 +20,4 @@ Route::get('/', function () {
 Auth::routes();
 
  Route::get('/home', [App\Http\Controllers\ProductController::class, 'index'])->name('product');
-  
+ Route::get('/detail/{id}', [App\Http\Controllers\ProductController::class, 'detail']);  
