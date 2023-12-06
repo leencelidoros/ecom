@@ -21,3 +21,7 @@ Auth::routes();
 
  Route::get('/home', [App\Http\Controllers\ProductController::class, 'index'])->name('product');
  Route::get('/detail/{id}', [App\Http\Controllers\ProductController::class, 'detail']);  
+ Route::post('/search', [App\Http\Controllers\ProductController::class,'search']);
+ Route::get( '/search', [App\Http\Controllers\ProductController::class, 'search'])->name('search');
+ Route::post('/add_to_cart', [App\Http\Controllers\ProductController::class, 'addToCart']);  
+
