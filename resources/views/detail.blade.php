@@ -22,6 +22,11 @@
                             <input type="hidden" name="product_id" value="{{$product['id']}}">
                            <button class="btn btn-primary " >Add to Cart</button>
                         </form>
+                        @if (session('success'))
+                            <div class="alert alert-success">
+                                {{ session('success') }}
+                            </div>
+                        @endif
 
                     <button class="btn btn-success " type="button" >Buy Now</button>
                     </div>
