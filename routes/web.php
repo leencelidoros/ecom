@@ -22,7 +22,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/home', [App\Http\Controllers\ProductController::class, 'index'])->name('product');
     Route::get('/detail/{id}', [App\Http\Controllers\ProductController::class, 'detail']);  
     Route::post('/search', [App\Http\Controllers\ProductController::class, 'search'])->name('search');
-    Route::get('/search', [App\Http\Controllers\ProductController::class, 'search']);
     Route::post('/add_to_cart', [App\Http\Controllers\ProductController::class, 'addToCart']);  
+    Route::get('/cartlist', [App\Http\Controllers\ProductController::class, 'cartlist'])->name('cartlist');
+
+
 });
 

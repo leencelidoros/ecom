@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Cart;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Auth; 
+use Illuminate\Support\Facades\DB;
 class ProductController extends Controller
 {
    public function index()
@@ -52,6 +54,28 @@ class ProductController extends Controller
            return 0; 
        }
    }
+   public function cartlist()
+   {
+       $user = Auth::user();
+   
+       if (Auth::check()) {
+           $userId = $user->id;
+   
+           $products = DB::table('carts')
+               ->join('products', 'carts.product_id', '=', 'products.id')
+               ->where('carts.user_id', $userId)
+               ->select('products.*')
+               ->get();
+   
+           return view('cartlist', ['products' => $products]);
+       } else {
+           return redirect('/login')->with('error', 'You must be logged in to view your cart.');
+       }
+   }
+   
+   
+      
+   
    
 
    }

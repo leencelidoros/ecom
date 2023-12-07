@@ -28,7 +28,7 @@ $total=ProductController::cartItem();
       </form>
       <div class="collapse navbar-collapse" id="navbarScroll">
           <ul class=" nav navbar-nav navbar-right" style="--bs-scroll-height: 100px;">
-          <li class="nav-item"><a class="nav-link" href="#">Cart {{ $total }}</a>
+          <li class="nav-item"><a class="nav-link" href="/cartlist">Cart {{ $total }}</a>
             </li>
           </ul>
       </div>
