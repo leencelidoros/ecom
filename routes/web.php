@@ -24,6 +24,9 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/search', [App\Http\Controllers\ProductController::class, 'search'])->name('search');
     Route::post('/add_to_cart', [App\Http\Controllers\ProductController::class, 'addToCart']);  
     Route::get('/cartlist', [App\Http\Controllers\ProductController::class, 'cartlist'])->name('cartlist');
+    Route::get('/remove-cart/{id}', [App\Http\Controllers\ProductController::class, 'removecart']);
+    Route::get('/order', [App\Http\Controllers\ProductController::class, 'order']);
+
 
 
 });

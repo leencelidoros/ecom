@@ -64,7 +64,7 @@ class ProductController extends Controller
            $products = DB::table('carts')
                ->join('products', 'carts.product_id', '=', 'products.id')
                ->where('carts.user_id', $userId)
-               ->select('products.*')
+               ->select('products.*','carts.id as cart_id')
                ->get();
    
            return view('cartlist', ['products' => $products]);
@@ -72,9 +72,31 @@ class ProductController extends Controller
            return redirect('/login')->with('error', 'You must be logged in to view your cart.');
        }
    }
+ public function removecart($id)
+ {
+    cart::destroy($id);
+    return redirect ('/cartlist');
+ }
+  
+ public function order()
+{
+    $user = Auth::user();
    
+    if (Auth::check()) {
+        $userId = $user->id;
+
+        $total = DB::table('carts')
+            ->join('products', 'carts.product_id', '=', 'products.id')
+            ->where('carts.user_id', $userId)
+            ->select('products.*','carts.id as cart_id')
+            ->sum('products.price');
+
+        return view('order', ['total' => $total]);
+    } else {
+        return redirect('/login')->with('error', 'You must be logged in to view your cart.');
+    }
+}
    
-      
    
    
 

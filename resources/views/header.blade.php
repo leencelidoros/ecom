@@ -4,20 +4,20 @@ $total=ProductController::cartItem();
 ?>
 <nav class="navbar navbar-expand-lg bg-light">
   <div class="container">
-    <a class="navbar-brand" href="/home">EComm </a>
+    <a class="navbar-brand h5" href="/home">EComm </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarScroll">
       <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/home">Home</a>
+          <a class="nav-link active h5" aria-current="page" href="/home">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Orders</a>
+          <a class="nav-link h5" href="#">Orders</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Add cart</a>
+          <a class="nav-link h5" href="#">Add cart</a>
         </li>
 
       </ul>
