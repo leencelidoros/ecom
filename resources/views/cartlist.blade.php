@@ -26,7 +26,17 @@
                 </div>
             @endforeach
         @else
-            <p>Your cart is empty.</p>
+        <div class="row mt-8">
+            <div class="col-md-6 mx-auto">
+                <div class="card mt-3 shadow-lg p-3 mb-5 bg-body rounded bg-success">
+                    <h4 class="card-text">Your  Cart is Empty!!</h4>
+                         <div class="card-footer">     
+                            <a class="btn btn-primary  me-md-2 mt-2 mb-2 text-center" type="button" href="/home">Add To Cart</a> 
+                         </div>
+                </div>          
+            </div>
+
+        </div>
         @endif
     </div>
 @endsection

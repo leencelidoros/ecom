@@ -126,6 +126,23 @@ public function orderPlace(Request $request)
         return redirect('/login')->with('error', 'You must be logged in to place an order.');
     }
 }
+  public function myorders()
+  {
+    $user = Auth::user();
+   
+    if (Auth::check()) {
+        $userId = $user->id;
+
+     $orders= DB::table('orders')
+            ->join('products', 'orders.product_id', '=', 'products.id')
+            ->where('orders.user_id', $userId)
+            ->get();
+
+         return view('myorders', ['orders' => $orders]);
+    } else {
+        return redirect('/login')->with('error', 'You must be logged in to view your cart.');
+    }
+  }
 
    
 
