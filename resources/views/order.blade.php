@@ -21,34 +21,41 @@
             </table>
             </div>
         </div>
-            <div class="row">
-              <div class="col-md-8 mx-auto">
-                <form action="/action.php">
-                <div class="form-group mb-3">
-                  <label for="email" class="form-label">Email address</label>
-                  <input type="email" class="form-control" id="email" placeholder="Enter your email"aria-describedby="emailHelp">
-                </div>
-                <div class="form-group mb-3">
-                  <label for="phone" class="form-label">Phone</label>
-                  <input type="tel" class="form-control" id="phone" placeholder="Enter your Phone Number"aria-describedby="emailHelp">
-                </div>
-                <div class ="form-group mb-3">
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-                    <label class="form-check-label" for="inlineRadio1">Paypal Payment</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                    <label class="form-check-label" for="inlineRadio2">Mpesa payment</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option2">
-                    <label class="form-check-label" for="inlineRadio3">Payment on Delivery</label>
-                  </div>
-                </div>
-  
-                <button type="submit" class="btn btn-primary">Order Now</button>
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <form action="/orderplace" method="POST">
+                    @csrf
+
+                    <div class="form-group mb-3">
+                        <label for="location" name="address" class="form-label">Email address</label>
+                        <input type="text" name="address" class="form-control" id="location" placeholder="Enter your location" aria-describedby="emailHelp" required>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label for="phone" class="form-label">Phone</label>
+                        <input type="tel" name="phone" class="form-control" id="phone" placeholder="Enter your Phone Number" aria-describedby="emailHelp" required>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <div class="form-check form-check-inline">
+                            <input name="payment_method" value="Paypal" class="form-check-input" type="radio" id="inlineRadio1" required>
+                            <label class="form-check-label" for="inlineRadio1">Paypal Payment</label>
+                        </div>
+
+                        <div class="form-check form-check-inline">
+                            <input name="payment_method" value="Mpesa" class="form-check-input" type="radio" id="inlineRadio2" required>
+                            <label class="form-check-label" for="inlineRadio2">Mpesa payment</label>
+                        </div>
+
+                        <div class="form-check form-check-inline">
+                            <input name="payment_method" value="Cash" class="form-check-input" type="radio" id="inlineRadio3" required>
+                            <label class="form-check-label" for="inlineRadio3">Payment on Delivery</label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Order Now</button>
                 </form>
+            </div>
               </div>
             </div>
     </div>
