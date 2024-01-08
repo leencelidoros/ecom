@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreOrderRequest;
 use App\Models\Product;
 use App\Models\Cart;
 use App\Models\Order;
@@ -98,7 +99,7 @@ class ProductController extends Controller
     }
 }
 
-public function orderPlace(Request $request)
+public function orderPlace(StoreOrderRequest $request)
 {
     $user = Auth::user();
    

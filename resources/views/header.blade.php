@@ -28,7 +28,7 @@ $total=ProductController::cartItem();
 
                 <ul class="nav navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="/cartlist">Cart {{ $total }}</a>
+                        <a class="nav-link" href="/cartlist">Cart ({{ $total }})</a>
                     </li>
                 </ul>
 
