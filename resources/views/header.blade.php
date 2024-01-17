@@ -2,8 +2,9 @@
 use App\Http\Controllers\ProductController;
 $total=ProductController::cartItem();
 ?>
+
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <div class="container">
+        <div class="container-xl">
             <a class="navbar-brand h1" href="/home">EComm</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>

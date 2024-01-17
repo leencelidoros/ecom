@@ -1,7 +1,7 @@
 {{View::make('header')}}
 @extends('layouts.app')
 @section('content')
-   <div class="container custom-product">
+    <div class="container custom-product">
         <div class="row">
             <div class="col-md-5 mx-auto mt-5">
                 <div class="card shadow-lg p-3 mb-5 bg-body rounded">
@@ -49,5 +49,8 @@
             @endforeach
         </div>
    </div>
-
+   {{View::make('footer')}}
 @endsection
+
+
+

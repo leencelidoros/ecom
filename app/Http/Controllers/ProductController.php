@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Requests\StoreOrderRequest;
 use App\Models\Product;
 use App\Models\Cart;
 use App\Models\Order;
+use App\Jobs\ProcessPodcast;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Auth; 
 use Illuminate\Support\Facades\DB;
@@ -14,8 +14,6 @@ class ProductController extends Controller
 {
    public function index()
    {
-
-      // return Product::all();
       $data=Product::all();
        return view('product' ,['products'=>$data]);
    }
@@ -99,7 +97,7 @@ class ProductController extends Controller
     }
 }
 
-public function orderPlace(StoreOrderRequest $request)
+public function orderPlace(Request $request)
 {
     $user = Auth::user();
    
@@ -144,7 +142,12 @@ public function orderPlace(StoreOrderRequest $request)
         return redirect('/login')->with('error', 'You must be logged in to view your cart.');
     }
   }
-
+  
+  public function dispatchJob()
+  {
+    ProcessPodcast::dispatch(1)->onQueue('test');
+     
+  }
    
 
    }

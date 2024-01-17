@@ -28,8 +28,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/order', [App\Http\Controllers\ProductController::class, 'order']);
     Route::post('/orderplace', [App\Http\Controllers\ProductController::class, 'orderPlace']);
     Route::get('/myorders', [App\Http\Controllers\ProductController::class, 'myorders']);
-
-
+ 
+    Route::get('/test', [App\Http\Controllers\ProductController::class, 'dispatchJob']);
 
 });
 

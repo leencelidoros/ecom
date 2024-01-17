@@ -24,6 +24,7 @@ class StoreOrderRequest extends FormRequest
         return [
             'phone' => ['required', 'regex:/^\+(?:[0-9] ?){6,14}[0-9]$/'],
             'address' =>'required',
+            'payment_method' =>'required',
 
         ];
     }

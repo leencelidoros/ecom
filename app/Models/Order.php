@@ -9,4 +9,7 @@ class Order extends Model
 {
     use HasFactory;
     public $timestamps =false;
+    
+    protected $fillable = ['product_id', 'user_id', 'status', 'payment_method', 'payment_status', 'address', 'phone'];
+
 }
