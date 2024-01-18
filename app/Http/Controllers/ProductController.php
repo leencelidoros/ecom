@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Cart;
+use App\Models\User;
 use App\Models\Order;
 use App\Jobs\ProcessPodcast;
+use App\Jobs\EmailJobs;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Auth; 
 use Illuminate\Support\Facades\DB;
@@ -149,6 +151,12 @@ public function orderPlace(Request $request)
      
   }
    
+  public function sendEmail()
+  {
+      // Dispatch the job
+      $user = Auth::user();
+      EmailJobs::dispatch($user->name)->onQueue('email');
 
+  }
    }
    

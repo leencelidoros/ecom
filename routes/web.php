@@ -30,6 +30,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/myorders', [App\Http\Controllers\ProductController::class, 'myorders']);
  
     Route::get('/test', [App\Http\Controllers\ProductController::class, 'dispatchJob']);
+    Route::get('/email', [App\Http\Controllers\ProductController::class, 'sendEmail']);
 
 });
 
